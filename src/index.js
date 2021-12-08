@@ -9,9 +9,17 @@ import App from './components/App';
 import { BrowserRouter as Router } from 'react-router-dom';
 import './index.css';
 
+// Step 1- In index.js, make use of the createStore method and Provider component to link your App to redux.
+const store = createStore(reducer);
+console.log(store.getState());
+
+
+
 ReactDOM.render(
-  <Router>
+  <Provider store={store}>
+    <Router>
       <App />
-  </Router>,
+    </Router>
+  </Provider>,
   document.getElementById('root')
 );

@@ -1,10 +1,12 @@
 import React from 'react';
+// Step 3- The MovieList component prints all of our movies to the screen.** Use the connect method here to map the movies state value into props. Replace our static movie variable with that prop.
+import { connect } from 'react-redux';
 
 import MovieListItem from './MovieListItem';
 import MovieFooter from './MovieFooter';
 
 const MovieList = (props)=> {
-    const movies = [];
+    const { movies } = props;
 
     return (
         <div className="col">
@@ -30,5 +32,10 @@ const MovieList = (props)=> {
         </div>
     );
 }
-
-export default MovieList;
+// Step 3- Use the connect method here to map the movies state value into props.
+const mapStateToProps = (state) => {
+    return ({
+        movies: state.movieReducer.movies
+    })
+}
+export default connect(mapStateToProps)(MovieList);

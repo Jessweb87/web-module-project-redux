@@ -21,8 +21,12 @@ const AddMovieForm = (props) => {
             [e.target.name]: e.target.value
         });
     }
-
+// Step 12- Create and connect the necessary event handlers to call addMovie.
     const handleSubmit = (e) => {
+        e.preventDefault();
+        props.addMovie(movie);
+// Step 13- Add in push('/movies/) after calling your action to trigger a redirect.
+        push('./movies')
     }
 
     const { title, director, genre, metascore, description } = movie;
@@ -67,4 +71,5 @@ const AddMovieForm = (props) => {
     </div>);
 }
 
-export default AddMovieForm;
+// Step 11 -Find the component that triggers the adding of a movie and connect the addMovie action.
+export default connect(null, { addMovie })(AddMovieForm);
