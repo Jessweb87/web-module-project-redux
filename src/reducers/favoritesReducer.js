@@ -17,7 +17,7 @@ const favoritesReducer = (state = initialState, action)=> {
             return {
                 ...state,
                 displayFavorites: !state.displayFavorites
-            }
+            } 
         }
     /*- addFavorites: Adds in a new movie object into the favorites list.*/
         case(ADD_FAVORITE): {

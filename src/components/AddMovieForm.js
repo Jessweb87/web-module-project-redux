@@ -26,7 +26,7 @@ const AddMovieForm = (props) => {
         e.preventDefault();
         props.addMovie(movie);
 // Step 13- Add in push('/movies/) after calling your action to trigger a redirect.
-        push('./movies')
+        push('/movies')
     }
 
     const { title, director, genre, metascore, description } = movie;

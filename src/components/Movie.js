@@ -4,11 +4,12 @@ import { connect } from 'react-redux';
 import { useParams, useHistory } from 'react-router-dom';
 
 // Step 6 -Connect the deleteMovie action through the connect method.
-import { deleteMovie } from '../actions/movieActions';
-import { addFavorite } from '../actions/favoritesActions';
+import { deleteMovie } from './../actions/movieActions';
+import { addFavorite } from './../actions/favoritesActions';
 
 
 const Movie = (props) => {
+    console.log(props);
     const { id } = useParams();
     const { push } = useHistory();
 
@@ -63,7 +64,8 @@ const Movie = (props) => {
                 </div>
             </div>
         </div>
-    </div>);
+    </div>
+    );
 }
 
 // Step 4- Map movies to props here as well.
